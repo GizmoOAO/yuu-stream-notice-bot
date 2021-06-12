@@ -19,10 +19,10 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            /home/runner/.deno
+            $HOME/.cache/deno
           key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
       - env:
           DISCORD_WEBHHOK_URL: ${{ secrets.DISCORD_WEBHHOK_URL }}
           BILIBILI_MID: ${{ secrets.BILIBILI_MID }}
         run: deno run -A main.ts
-      - run: ls /home/runner/.deno
+      - run: ls $HOME/.cache/deno
