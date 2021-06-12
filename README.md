@@ -1,1 +1,3 @@
-# yuu-stream-notice-bot
+# Yuu 今天直播了嗎?
+
+沒有

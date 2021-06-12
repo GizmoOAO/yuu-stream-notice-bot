@@ -1,0 +1,10 @@
+discord:
+  enable: true
+  content:
+  description: Yuu正在直播
+  color: 16744192
+  button:
+    watch:
+      emoji:
+        id: null
+        name: ❤
