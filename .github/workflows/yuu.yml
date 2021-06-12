@@ -15,12 +15,6 @@ jobs:
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            $HOME/.cache/deno
-          key: ${{ runner.os }}-pALtZeu57t6G87
       - env:
           DISCORD_WEBHHOK_URL: ${{ secrets.DISCORD_WEBHHOK_URL }}
           BILIBILI_MID: ${{ secrets.BILIBILI_MID }}
