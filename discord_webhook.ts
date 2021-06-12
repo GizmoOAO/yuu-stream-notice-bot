@@ -77,7 +77,7 @@ interface Emoji {
 }
 
 export function Webhook(info: WebhookRequest) {
-  if (!webhookUrl) return
+  if (!webhookUrl) return console.log("Webhook URL未找到, 停止執行")
   fetch(webhookUrl, {
     method: 'POST',
     body: JSON.stringify(info),

@@ -30,7 +30,7 @@ interface LiveRoom {
 
 async function checkStreaming(data: any, site: string) {
   const info = data.live_room as LiveRoom
-  if (!info.liveStatus) return
+  if (!info.liveStatus) return console.log("未直播");
 
   const thumbnail = getThumbnail(site)
   const footer = config.discord.hitokoto
