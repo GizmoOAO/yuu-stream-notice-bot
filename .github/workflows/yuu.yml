@@ -20,7 +20,7 @@ jobs:
         with:
           path: |
             $HOME/.cache/deno
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+          key: ${{ runner.os }}-pALtZeu57t6G87
       - env:
           DISCORD_WEBHHOK_URL: ${{ secrets.DISCORD_WEBHHOK_URL }}
           BILIBILI_MID: ${{ secrets.BILIBILI_MID }}
