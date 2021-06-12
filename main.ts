@@ -15,7 +15,7 @@ fetch(bilibiliApiUrl)
       console.error(body.message)
       return
     }
-    checkStreaming(body.data, 'bilibili')
+    checkStreaming(body.data)
   })
   .catch((err) => {
     console.error(err)
@@ -28,11 +28,12 @@ interface LiveRoom {
   cover: string
 }
 
-async function checkStreaming(data: any, site: string) {
+async function checkStreaming(data: any) {
   const info = data.live_room as LiveRoom
-  if (!info.liveStatus) return console.log("未直播");
+  if (!info.liveStatus) return console.log('未直播')
 
-  const thumbnail = getThumbnail(site)
+  const thumbnail =
+    'https://i0.hdslb.com/bfs/feed-admin/d11f0d19337292fc64c1f985131bae759219ddfc.png'
   const footer = config.discord.hitokoto
     ? await hitokoto()
     : footerList[random.int(0, 10)]
@@ -84,19 +85,6 @@ async function checkStreaming(data: any, site: string) {
         },
       ],
     })
-  }
-}
-
-function getThumbnail(site: string): string | void {
-  switch (site) {
-    case 'bilibili':
-      return 'https://i0.hdslb.com/bfs/feed-admin/d11f0d19337292fc64c1f985131bae759219ddfc.png'
-    case 'youtube':
-      return 'https://cdn.discordapp.com/attachments/820845060651745341/853090005379055646/youtube_social_icon_white.png'
-    case 'twitch':
-      return 'https://cdn.discordapp.com/attachments/820845060651745341/853090155153981480/TwitchExtrudedWordmarkPurple.png'
-    default:
-      break
   }
 }
 
