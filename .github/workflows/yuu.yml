@@ -15,7 +15,14 @@ jobs:
       - uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            /home/runner/.deno
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
       - env:
           DISCORD_WEBHHOK_URL: ${{ secrets.DISCORD_WEBHHOK_URL }}
           BILIBILI_MID: ${{ secrets.BILIBILI_MID }}
         run: deno run -A main.ts
+      - run: ls /home/runner/.deno
