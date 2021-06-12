@@ -25,4 +25,3 @@ jobs:
           DISCORD_WEBHHOK_URL: ${{ secrets.DISCORD_WEBHHOK_URL }}
           BILIBILI_MID: ${{ secrets.BILIBILI_MID }}
         run: deno run -A main.ts
-      - run: ls $HOME/.cache/deno
